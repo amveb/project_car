@@ -14,7 +14,7 @@ class Service(models.Model):
 class Order(models.Model):
     amount = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    services = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
+    service = models.ManyToManyField(Service, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Заказы"
@@ -24,5 +24,7 @@ class Order(models.Model):
 class UserCar(models.Model):
     phone = models.IntegerField()
     photo = models.ImageField("Фотография", upload_to="orders/users", default="", blank=True)
-    orders = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    orders = models.OneToOneField(Order, on_delete=models.CASCADE, null=True)
+
+
 
