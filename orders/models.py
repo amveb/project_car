@@ -13,6 +13,7 @@ class Service(models.Model):
 
 class Order(models.Model):
     amount = models.IntegerField()
+    date = models.DateTimeField("дата", auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     service = models.ManyToManyField(Service, on_delete=models.CASCADE, null=True)
 
@@ -21,10 +22,13 @@ class Order(models.Model):
         verbose_name_plural = "Заказы"
 
 
-class UserCar(models.Model):
-    phone = models.IntegerField()
+class Account(models.Model):
+    phone = models.CharField("телефон", max_length=50)
     photo = models.ImageField("Фотография", upload_to="orders/users", default="", blank=True)
+    car = models.CharField("Автомобиль", max_length=250)
+    testimonial = models.TextField("Отзыв")
     orders = models.OneToOneField(Order, on_delete=models.CASCADE, null=True)
 
-
-
+    class Meta:
+        verbose_name = "Личный кабинет"
+        verbose_name_plural = "Личный кабинет"
