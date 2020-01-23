@@ -27,7 +27,7 @@ class Account(models.Model):
     photo = models.ImageField("Фотография", upload_to="orders/users", default="", blank=True)
     car = models.CharField("Автомобиль", max_length=250)
     testimonial = models.TextField("Отзыв")
-    orders = models.OneToOneField(Order, on_delete=models.CASCADE, null=True)
+    orders = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = "Личный кабинет"
