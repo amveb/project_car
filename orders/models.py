@@ -15,7 +15,7 @@ class Order(models.Model):
     amount = models.IntegerField()
     date = models.DateTimeField("дата", auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    services = models.ManyToManyField(Service, on_delete=models.CASCADE, null=True)
+    services = models.ManyToManyField(Service, null=True)
 
     class Meta:
         verbose_name = "Заказы"
