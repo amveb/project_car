@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <section class="section hero" id="js-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero__title">
+                        <h1>Ремонт <span>коленчатых валов</span> в Анапе</h1>
+                    </div>
+                    <hr class="hr"/>
+                    {% for service in services %}
+                        <div class="hero__item">
+                            <img src="{% static 'img/icons/kolenval.png' %}"
+                                 alt="{{ service.name }}"/>{{ service.name }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-6">
+                    <img class="hero__image" src="{% static 'img/kolenval.png' %}"
+                         alt="Ремонт коленчатых валов в Анапе"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /hero -->
+
+{% endblock %}
