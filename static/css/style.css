@@ -2139,6 +2139,7 @@ a {
     justify-content: start;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 @media (max-width: 576px) {

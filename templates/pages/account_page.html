@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+ {% block content %}
+ <section class="section hero" id="js-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="section__title">
+                <h2 class="section__title-heading">
+                  <span class="section__title-icon section__title-icon--left"></span>
+                  Личный кабинет<span
+                    class="section__title-icon section__title-icon--right"
+                  ></span>
+                </h2>
+                <p class="section__title-text">Добрый день, Username!</p>
+              </div>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-lg-3">
+                <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                      <div class="card__wrapper">
+                        <div class="card__heading">
+                            <h3 class="card__title">Меню</h3>
+                        </div>
+
+                        <div class="card__text">
+
+                                <ul class="admin__navigation-list" id="js-admin-nav">
+                                        <li class="navigation__item navigation__item--admin">
+                                          <a class="navigation__link" href="#js-hero">Заказы</a>
+                                        </li>
+                                        <li class="navigation__item navigation__item--admin">
+                                          <a class="navigation__link active" href="#js-why">Контакты</a>
+                                        </li>
+                                        <li class="navigation__item navigation__item--admin">
+                                          <a class="navigation__link" href="#js-work">Написать Отзыв</a>
+                                        </li>
+
+                                    </ul>
+                        </div>
+                      </div>
+                      <span class="work__slider-icon why__slider-icon--left"></span>
+                      <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+         </div>
+        <div class="col-lg-9">
+                <div class="card">
+                        <span class="work__slider-icon work__slider-icon--right-price"></span>
+                      <div class="card__wrapper">
+                        <div class="card__heading">
+                          <h3 class="card__title">Контакты</h3>
+                        </div>
+                        <div class="card__text">
+                            <div class="row admin__wrapper">
+                                <div class="col-lg-6">
+
+                                    <form>
+                                        <div class="admin__form-group">
+                                            <input type="email" class="admin__form-control" id="exampleFormControlInput1" placeholder="Имя">
+                                            <input type="email" class="admin__form-control" id="exampleFormControlInput1" placeholder="Телефон">
+                                            <input type="email" class="admin__form-control" id="exampleFormControlInput1" placeholder="Автомобиль">
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="col-lg-6">
+
+                                    <div class="card__heading card__heading--conctacts">
+                                      <img class="card__photo-contacts" src="{% static '/img/testimonials/testimonials_1.jpg' %}" alt="Мастер коленчатых валов"/>
+                                    </div>
+                                    <div class="card__button card__button--admin">
+                                      <a href="tel:+79184639571" class="card__button-price">Загрузить</a>
+                                  </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card__button card__button--admin">
+                                        <a href="tel:+79184639571" class="card__button-price">Сохранить</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                      </div>
+                      <span class="work__slider-icon why__slider-icon--left"></span>
+                      <span class="work__slider-icon why__slider-icon--bottom"></span>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <!-- end adminka -->
+{% endblock %}

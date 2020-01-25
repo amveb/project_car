@@ -27,6 +27,7 @@ router.register('api/services', ServiceView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.services_page, name='home'),
+    path('account/', views.account_page, name='account'),
 ]
 
 urlpatterns += router.urls
