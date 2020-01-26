@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+import allauth
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 
 from orders import views
@@ -27,7 +27,10 @@ router.register('api/services', ServiceView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.services_page, name='home'),
-    path('account/', views.account_page, name='account'),
+
+    path('accounts/', include('allauth.urls')),
+    path('accounts/login/', allauth.account.views.LoginView, name='account_login'),
+
 ]
 
 urlpatterns += router.urls
