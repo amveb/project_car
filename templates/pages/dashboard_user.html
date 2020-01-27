@@ -1,9 +1,8 @@
-{% extends "base.html" %}
+{% extends "dashboard.html" %}
 {% load static %}
 
  {% block content %}
- <section class="section hero" id="js-hero">
-    <div class="container">
+
         <div class="row">
             <div class="col-lg-12">
               <div class="section__title">
@@ -13,7 +12,7 @@
                     class="section__title-icon section__title-icon--right"
                   ></span>
                 </h2>
-                <p class="section__title-text">Добрый день, Username!</p>
+                <p class="section__title-text">Добрый день, {{ user.username}}!</p>
               </div>
             </div>
         </div>
@@ -93,7 +92,6 @@
                     </div>
         </div>
       </div>
-    </div>
-  </section>
+
       <!-- end adminka -->
 {% endblock %}

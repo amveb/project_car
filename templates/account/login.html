@@ -1,18 +1,25 @@
 {% extends "dashboard.html" %}
 
 {% load static %}
+{% load i18n %}
 {% load account %}
-
+{% load account socialaccount %}
+{% get_providers as socialaccount_providers %}
 
 {% block content %}
-    <section class="section hero">
-        <div class="container">
+
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="hero__title hero__title--admin">
-                        <h1>Авторизация</h1>
-                    </div>
-                </div>
+          <div class="col-lg-12">
+              <div class="section__title">
+                <h2 class="section__title-heading">
+                  <span class="section__title-icon section__title-icon--left"></span>
+                 {% block head_title %}{% trans "Sign In" %}{% endblock %}<span
+                    class="section__title-icon section__title-icon--right"
+                  ></span>
+                </h2>
+                <p class="section__title-dashboard">Пожалуйста, авторизуйтесь для входа в личный кабинет</p>
+              </div>
+            </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
@@ -20,15 +27,29 @@
                         <span class="work__slider-icon work__slider-icon--right-price"></span>
                         <div class="card__wrapper">
                             <div class="card__heading">
-                                <h3 class="card__title">МЕНЮ</h3>
+                                <h3 class="card__title">Вход</h3>
                             </div>
 
                             <div class="card__text">
-                                <form action="." method="post">
-                                    {{ form.as_p }}
+                                <form class="login" method="POST" action="{% url 'account_login' %}">
                                     {% csrf_token %}
-                                    <button type="submit">Войти</button>
+                                    {{ form.as_p }}
+                                    {% if redirect_field_value %}
+                                        <input type="hidden" name="{{ redirect_field_name }}"
+                                               value="{{ redirect_field_value }}"/>
+                                    {% endif %}
+                                    <a class="button secondaryAction"
+                                       href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                                    <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
                                 </form>
+                                <div class="footer__social-dashboard">
+
+                                    <ul class="social__list-dashboard">
+                                        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                                    </ul>
+
+
+                                </div>
                             </div>
                         </div>
                         <span class="work__slider-icon why__slider-icon--left"></span>
@@ -36,7 +57,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
     <!-- end adminka -->
 {% endblock %}
