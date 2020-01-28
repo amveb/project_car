@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from orders.models import Service
+
+
+def orders_page(request):
+    return render(request, "pages/order_page.html", {'services': Service.objects.all()})
