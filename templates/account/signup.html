@@ -1,0 +1,60 @@
+{% extends "dashboard.html" %}
+
+{% load static %}
+{% load i18n %}
+{% load account %}
+{% load account socialaccount %}
+{% get_providers as socialaccount_providers %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    {% block head_title %}{% trans "Sign Up" %}{% endblock %}<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-dashboard">Пожалуйста, авторизуйтесь для входа в личный кабинет</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <span class="work__slider-icon work__slider-icon--right-price"></span>
+                <div class="card__wrapper">
+                    <div class="card__heading">
+                        <h3 class="card__title"></h3>
+                    </div>
+<p class="login__link-dashboard">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                    <div class="card__text">
+                        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}"
+                                       value="{{ redirect_field_value }}"/>
+                            {% endif %}
+                            <button type="submit">{% trans "Sign Up" %}</button>
+                        </form>
+                        <div class="footer__social-dashboard">
+
+                            <ul class="social__list-dashboard">
+                                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- end adminka -->
+{% endblock %}

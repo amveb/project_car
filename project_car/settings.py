@@ -199,5 +199,5 @@ ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/'
-
+EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 

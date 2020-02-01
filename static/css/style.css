@@ -1690,17 +1690,15 @@ a {
     height: 1px;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
-    -webkit-transform-origin: center left;
-    -ms-transform-origin: center left;
-    transform-origin: center left;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
     width: 5rem;
 }
 
 @media (max-width: 576px) {
     .hr {
-        margin: 0 auto;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin: 1rem auto;
     }
 }
 
@@ -2628,7 +2626,6 @@ a {
 .sliderwprapper {
     position: relative;
     overflow: hidden;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     left: 0;
@@ -3004,7 +3001,6 @@ a {
 .sliderwrapper__testimonials {
     position: relative;
     overflow: hidden;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     left: 0;
@@ -3050,7 +3046,6 @@ a {
 .sliderwrapper__left-testimonials {
     position: relative;
     overflow: hidden;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     left: 0;
@@ -3085,7 +3080,6 @@ a {
 .sliderwrapper__right-testimonials {
     position: relative;
     overflow: hidden;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
     left: 0;
@@ -3606,35 +3600,100 @@ div.card__text > form {
 div.card__text > form > p > label {
     font-size: 0.9rem;
     color: #978177;
+    width: 75%;
+}
+
+.card__text p {
+    font-size: 0.9rem !important;
 }
 
 .container--messages {
     background: #b85f2c;
 }
 
-.footer__social-dashboard{
-   margin-top: 1rem;
+.footer__social-dashboard {
+    margin-top: 1rem;
 }
-.social__list-dashboard{
+
+.social__list-dashboard {
     padding: 0.6rem 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
 }
-.social__item-dashboard{
+
+.social__item-dashboard {
     color: #b85f2c;
 }
-.social__link-dashboard{
+
+.social__link-dashboard {
     z-index: 99;
 }
-.social__icon-dashboard{
-    width: 3rem;
-    height: 3rem;
+
+.social__icon-dashboard {
+    width: 2rem;
+    height: 2rem;
 }
-.section__title-dashboard{
+
+.section__title-dashboard {
     color: #BCBCBC;
     font-size: 1rem;
-    font-family: "MontserratAlternates-Regular";
+    font-family: "MontserratAlternates-Regular", serif;
     max-width: 25rem;
     text-align: center;
+}
+
+.login__link-dashboard {
+    font-size: 0.8rem;
+    color: rgba(255, 251, 251, 0.29);
+    z-index: 99;
+}
+
+.login__link-dashboard a {
+    color: #a99494;
+    border-bottom: 1px dashed rgb(134, 121, 122);
+}
+
+.errorlist {
+    font-size: 0.8rem !important;
+}
+
+.card__text input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    overflow: hidden;
+    background: none !important;
+    border: none !important;
+    margin-left: 8rem;
+    margin-top: -1.3rem;
+}
+
+.card__text input[type=checkbox]:before {
+    content: "\2713";
+    color: transparent;
+    background: #4d555d;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 22px;
+    margin: -3px 0 0 -5px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease .3s;
+    cursor: pointer;
+}
+
+.card__text input[type=checkbox]:checked:before {
+    color: #a78f83;
+    transition: color ease .3s;
+
+}
+.change__password{
+    padding: 0.5rem;
+    margin-top: -1rem;
 }

@@ -27,7 +27,7 @@
                         <span class="work__slider-icon work__slider-icon--right-price"></span>
                         <div class="card__wrapper">
                             <div class="card__heading">
-                                <h3 class="card__title">Вход</h3>
+                                <h3 class="card__title"></h3>
                             </div>
 
                             <div class="card__text">
@@ -38,8 +38,10 @@
                                         <input type="hidden" name="{{ redirect_field_name }}"
                                                value="{{ redirect_field_value }}"/>
                                     {% endif %}
-                                    <a class="button secondaryAction"
+                                <div class="change__password">
+                                    <a class="login__link-dashboard"
                                        href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                                </div>
                                     <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
                                 </form>
                                 <div class="footer__social-dashboard">
