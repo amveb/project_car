@@ -1,0 +1,92 @@
+{% extends "dashboard.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    Оформить заказ<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-text">Добрый день, {{ user.username }}!</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-7">
+            <div class="card">
+                <span class="work__slider-icon work__slider-icon--right-price"></span>
+                <div class="card__wrapper">
+                    <div class="card__heading">
+                        <h3 class="card__title">Услуги</h3>
+                    </div>
+                    <div class="card__text">
+                        <div class="row admin__wrapper">
+
+                            <div class="col-lg-12">
+                                {% verbatim %}
+                                <ul class="checked__list" id="services_order">
+                                    {{ message }}
+                                    <li class="list-item" v-for="service in services">
+                                        <input type="checkbox" class="hidden-box"/>
+                                        <label for="first" class="check--label">
+                                            <span class="check--label-box"></span>
+                                            <span class="check--label-text">{{ service.name }}</span>
+                                            <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
+                                        </label>
+                                    </li>
+
+                                </ul>
+                                {% endverbatim %}
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <span class="work__slider-icon work__slider-icon--right-price"></span>
+                <div class="card__wrapper">
+                    <div class="card__heading">
+                        <h3 class="card__title">Итого</h3>
+                    </div>
+
+                    <div class="card__text">
+                             {% verbatim %}
+                                <ul class="checked__list" id="services_order">
+                                    {{ message }}
+                                    <li class="list-item" v-for="service in services">
+                                        <input type="checkbox" class="hidden-box"/>
+                                        <label for="first" class="check--label">
+                                            <span class="check--label-box"></span>
+                                            <span class="check--label-text">{{ service.name }}</span>
+                                            <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
+                                        </label>
+                                    </li>
+
+                                </ul>
+                                {% endverbatim %}
+
+                        <div class="card__button card__button--admin">
+                            <a href="tel:+79184639571" class="card__button-price">Оплатить</a>
+                        </div>
+                    </div>
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+    </div>
+    <!-- end adminka -->
+{% endblock %}

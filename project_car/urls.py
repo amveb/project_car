@@ -19,7 +19,7 @@ from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 
 from orders import views
-from orders.views import ServiceView
+from orders.views import ServiceView, order_app
 
 router = SimpleRouter()
 router.register('api/services', ServiceView)
@@ -29,6 +29,7 @@ urlpatterns = [
     path('', views.services_page, name='home'),
     path('accounts/', include('allauth.urls')),
     path('dashboard/', views.dashboard_user_page, name='dashboard'),
+    path('order/', order_app, name='order'),
 
 ]
 

@@ -180,6 +180,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+# Media folder
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 ACCOUNT_FORMS = {
     'login': 'allauth.account.forms.LoginForm',
@@ -200,4 +203,3 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-
