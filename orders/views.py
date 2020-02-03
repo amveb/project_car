@@ -3,12 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 
-from orders.models import Service
+from orders.models import Service, Account
 from orders.serializers import ServiceSerializer
 
 
-def services_page(request):
-    return render(request, "pages/service_page.html", {'services': Service.objects.all()})
+def index_page(request):
+    return render(request, "pages/index_page.html", {'services': Service.objects.all()})
 
 
 class ServiceView(ModelViewSet):
@@ -18,7 +18,7 @@ class ServiceView(ModelViewSet):
 
 @login_required
 def dashboard_user_page(request):
-    return render(request, "pages/dashboard_user.html")
+    return render(request, "pages/dashboard_user.html", {'accounts': Account.objects.all()})
 
 
 @login_required

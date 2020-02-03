@@ -1,5 +1,6 @@
 {% extends "dashboard.html" %}
 {% load static %}
+{% load account %}
 {% load i18n %}
 {% block content %}
 
@@ -59,15 +60,9 @@
                         <div class="row admin__wrapper">
                             <div class="col-lg-6">
 
-                                <form>
-                                    <div class="admin__form-group">
-                                        <input type="email" class="admin__form-control" id="exampleFormControlInput1"
-                                               placeholder="Имя">
-                                        <input type="email" class="admin__form-control" id="exampleFormControlInput1"
-                                               placeholder="Телефон">
-                                        <input type="email" class="admin__form-control" id="exampleFormControlInput1"
-                                               placeholder="Автомобиль">
-                                    </div>
+                                <form class="login" method="POST" action="{% url 'account_login' %}">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
                                 </form>
 
                             </div>
