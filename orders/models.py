@@ -24,7 +24,7 @@ class Order(models.Model):
 
 class Account(models.Model):
     phone = models.CharField("телефон", max_length=50)
-    photo = models.ImageField("Фотография", upload_to="orders/users", default="", blank=True)
+    photo = models.ImageField("Фотография", upload_to="users/%Y/%m/%d/", default="", blank=True)
     car = models.CharField("Автомобиль", max_length=250, blank=True)
     testimonial = models.TextField("Отзыв", blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
