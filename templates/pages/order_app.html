@@ -15,7 +15,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    {% verbatim %}
+    <div class="row" id="vueOrder">
 
         <div class="col-lg-7">
             <div class="card">
@@ -28,20 +29,21 @@
                         <div class="row admin__wrapper">
 
                             <div class="col-lg-12">
-                                {% verbatim %}
-                                <ul class="checked__list" id="services_order">
-                                    {{ message }}
-                                    <li class="list-item" v-for="service in services">
-                                        <input type="checkbox" class="hidden-box"/>
-                                        <label for="first" class="check--label">
+
+                                <ul class="checked__list">
+                                    <li class="list-item" v-for="service in services" ::key="service.product_id">
+                                        <input type="checkbox" class="hidden-box" :checked="service.selected"
+                                               @click="changeOrder(service)"/>
+                                        <label for="third" class="check--label">
                                             <span class="check--label-box"></span>
-                                            <span class="check--label-text">{{ service.name }}</span>
-                                            <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
+                                            <span class="check--label-text">{{service.name}}</span>
+                                            <h4 class="card__price-admin">
+                                                {{service.price}}<sup>₽</sup>
+                                            </h4>
                                         </label>
                                     </li>
-
                                 </ul>
-                                {% endverbatim %}
+
                             </div>
 
 
@@ -63,20 +65,28 @@
                     </div>
 
                     <div class="card__text">
-                             {% verbatim %}
-                                <ul class="checked__list" id="services_order">
-                                    {{ message }}
-                                    <li class="list-item" v-for="service in services">
-                                        <input type="checkbox" class="hidden-box"/>
-                                        <label for="first" class="check--label">
-                                            <span class="check--label-box"></span>
-                                            <span class="check--label-text">{{ service.name }}</span>
-                                            <h4 class="card__price-admin">{{ service.price }}<sup>₽</sup></h4>
-                                        </label>
-                                    </li>
 
-                                </ul>
-                                {% endverbatim %}
+                        <ul class="checked__list">
+                            <li class="list-item" v-for="product in selectedOrder" :key="product.name">
+                                <label for="third" class="check--label">
+                                    <span class="check--label-text">{{product.name}}</span>
+                                    <h4 class="card__price-admin">
+                                        {{product.price}}<sup>₽</sup>
+                                    </h4>
+                                </label>
+                            </li>
+                            <li class="list-item">
+                                <label for="third" class="check--label"
+                                       style="font-weight: bold !important; color: yellowgreen;">
+                                    <span class="check--label-text">ИТОГО:</span>
+                                    <h4 class="card__price-admin"
+                                        style="font-weight: bold !important; color: yellowgreen;">
+                                        {{itog}}<sup>₽</sup>
+                                    </h4>
+                                </label>
+                            </li>
+                        </ul>
+
 
                         <div class="card__button card__button--admin">
                             <a href="tel:+79184639571" class="card__button-price">Оплатить</a>
@@ -88,5 +98,6 @@
             </div>
         </div>
     </div>
+    {% endverbatim %}
     <!-- end adminka -->
 {% endblock %}

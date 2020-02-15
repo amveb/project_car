@@ -1937,6 +1937,7 @@ a {
     text-align: left;
     letter-spacing: 0.14em;
     color: #DFB799;
+    margin-bottom: 1.5rem;
 }
 
 @media (max-width: 1024px) {
@@ -2003,6 +2004,72 @@ a {
     .hero__item img {
         width: 3rem;
     }
+}
+.hero__item-order {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.button__order {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.button__order-img {
+    width: 4rem;
+    height: auto;
+}
+
+.button__order-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    color: #dfb799;
+}
+
+.button__order-text {
+    text-transform: uppercase;
+    text-align: center;
+    color: #c4c4c4;
+    letter-spacing: .1rem;
+    font-family: MontserratAlternates-Bold;
+    font-size: .7rem;
+    width: 5rem;
+    margin-left: 1rem;
+}
+
+.button__order-text sup {
+    color: #dfb799;
+    font-size: .7rem;
+}
+
+.hr__order {
+    background-color: #dfb799;
+    border: none;
+    content: "";
+    height: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    -webkit-transform-origin: center left;
+    -ms-transform-origin: center left;
+    transform-origin: center left;
+    width: 12rem;
 }
 
 .col-why {
