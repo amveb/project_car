@@ -2005,6 +2005,7 @@ a {
         width: 3rem;
     }
 }
+
 .hero__item-order {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3898,4 +3899,92 @@ div.card__text > form > p > label {
     -webkit-transition: color ease .3s;
     -o-transition: color ease .3s;
     transition: color ease .3s;
+}
+
+.orders__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.orders__list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.11);
+    position: relative;
+}
+
+.orders__list-item:nth-child(1) {
+    border-top: 1px solid rgba(192, 192, 192, 0.11);
+}
+
+.orders__list-item:nth-child(2n+1) {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.orders__list-number {
+    font-size: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.orders-sub__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-item-align: center;
+    align-self: center;
+    position: relative;
+    padding: 0;
+}
+
+.orders-sub__item {
+    border-left: 1px solid rgba(192, 192, 192, 0.11);
+    padding: 5px 15px;
+    font-size: 0.9rem;
+}
+
+.orders__price-admin {
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-family: Gagalin-Regular;
+    font-size: 1.2rem;
+    color: #dfb799;
+    text-shadow: 4px 4px 6px rgba(53, 25, 25, 0.358);
+    letter-spacing: .1rem;
+    right: 0;
+    position: absolute;
 }

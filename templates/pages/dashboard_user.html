@@ -30,10 +30,10 @@
 
                         <ul class="admin__navigation-list" id="js-admin-nav">
                             <li class="navigation__item navigation__item--admin">
-                                <a class="navigation__link" href="#js-hero">Заказы</a>
+                                <a class="navigation__link active" href="#js-hero">Заказы</a>
                             </li>
                             <li class="navigation__item navigation__item--admin">
-                                <a class="navigation__link active" href="#js-why">Контакты</a>
+                                <a class="navigation__link" href="#js-why">Контакты</a>
                             </li>
                             <li class="navigation__item navigation__item--admin">
                                 <a class="navigation__link" href="#js-work">Написать Отзыв</a>
@@ -54,36 +54,70 @@
                 <span class="work__slider-icon work__slider-icon--right-price"></span>
                 <div class="card__wrapper">
                     <div class="card__heading">
-                        <h3 class="card__title">Контакты</h3>
+                        <h3 class="card__title">Заказы</h3>
                     </div>
                     <div class="card__text">
                         <div class="row admin__wrapper">
-                            <div class="col-lg-6">
-
-                                <form class="login" method="POST" action="{% url 'account_login' %}">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
-                                </form>
-
-                            </div>
-                            <div class="col-lg-6">
-
-                                <div class="card__heading card__heading--conctacts">
-                                    <img class="card__photo-contacts"
-                                         src="{% static '/img/testimonials/testimonials_1.jpg' %}"
-                                         alt="Мастер коленчатых валов"/>
-                                </div>
-                                <div class="card__button card__button--admin">
-                                    <a href="tel:+79184639571" class="card__button-price">Загрузить</a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-12">
-                                <div class="card__button card__button--admin">
-                                    <a href="tel:+79184639571" class="card__button-price">Сохранить</a>
-                                </div>
+
+                                <ul class="orders__list">
+                                    <li class="orders__list-item">
+                                        <span class="orders__list-number">23.11.2019</span>
+                                        <ul class="orders-sub__list">
+                                            <li class="orders-sub__item">
+                                                расточка блоков цилиндров
+                                            </li>
+
+                                        </ul>
+                                        <h4 class="orders__price-admin">1900<sup>₽</sup></h4>
+                                    </li>
+                                    <li class="orders__list-item">
+                                        <span class="orders__list-number">23.11.2019</span>
+                                        <ul class="orders-sub__list">
+                                            <li class="orders-sub__item">
+                                                расточка блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                хонингование блоков цилиндров
+                                            </li>
+                                        </ul>
+                                        <h4 class="orders__price-admin">1900<sup>₽</sup></h4>
+                                    </li>
+                                    <li class="orders__list-item">
+                                        <span class="orders__list-number">23.11.2019</span>
+                                        <ul class="orders-sub__list">
+                                            <li class="orders-sub__item">
+                                                расточка блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                хонингование блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                шлифовка блоков цилиндров
+                                            </li>
+                                        </ul>
+                                        <h4 class="orders__price-admin">1900<sup>₽</sup></h4>
+                                    </li>
+                                    <li class="orders__list-item">
+                                        <span class="orders__list-number">23.11.2019</span>
+                                        <ul class="orders-sub__list">
+                                            <li class="orders-sub__item">
+                                                расточка блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                хонингование блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                шлифовка блоков цилиндров
+                                            </li>
+                                            <li class="orders-sub__item">
+                                                шлифовка блоков цилиндров
+                                            </li>
+                                        </ul>
+                                        <h4 class="orders__price-admin">1900<sup>₽</sup></h4>
+                                    </li>
+                                </ul>
+
                             </div>
 
                         </div>
