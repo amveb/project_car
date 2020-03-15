@@ -16,13 +16,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from rest_framework.routers import SimpleRouter
+
 
 from orders import views
-from orders.views import ServiceView
 
-router = SimpleRouter()
-router.register('api/services', ServiceView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +27,3 @@ urlpatterns = [
     path('account/', views.account_page, name='account'),
 ]
 
-urlpatterns += router.urls
