@@ -1,0 +1,49 @@
+{% extends "registration/registration.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    {% block head_title %} Вход{% endblock %}<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+                <p class="section__title-dashboard">Авторизуйтесь, как администратор</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <span class="work__slider-icon work__slider-icon--right-price"></span>
+                <div class="card__wrapper">
+                    <div class="card__heading">
+                        <h3 class="card__title"></h3>
+                    </div>
+                    <div class="card__text">
+                        {% if form.errors %}
+
+                        {% endif %}
+                        <form class="login" method="POST" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                            <p><input type="submit" value="Вход"></p>
+                        </form>
+                    </div>
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- end adminka -->
+{% endblock %}

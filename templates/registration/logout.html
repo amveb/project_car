@@ -1,0 +1,42 @@
+{% extends "registration/registration.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section__title">
+                <h2 class="section__title-heading">
+                    <span class="section__title-icon section__title-icon--left"></span>
+                    {% block head_title %}Выход{% endblock %}<span
+                        class="section__title-icon section__title-icon--right"
+                ></span>
+                </h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <span class="work__slider-icon work__slider-icon--right-price"></span>
+                <div class="card__wrapper">
+                    <div class="card__heading">
+                        <h3 class="card__title">Вы действительно хотите выйти?</h3>
+                    </div>
+
+                    <div class="card__text">
+                        <p>Если вы передумали, вы можете  <a href="{% url "login" %}">войти</a>.
+                        </p>
+                    </div>
+                </div>
+                <span class="work__slider-icon why__slider-icon--left"></span>
+                <span class="work__slider-icon why__slider-icon--bottom"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- end adminka -->
+{% endblock %}
